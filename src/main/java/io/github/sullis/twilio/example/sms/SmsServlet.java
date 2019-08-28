@@ -17,7 +17,7 @@ public class SmsServlet extends HttpServlet {
 
   @Override
   public void init() {
-    Twilio.init("aaa", "bbb");
+    Twilio.init(TwilioProperties.getAccount(), TwilioProperties.getPassword());
   }
 
   @Override
