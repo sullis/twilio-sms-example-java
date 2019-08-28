@@ -6,11 +6,22 @@ import com.twilio.twiml.messaging.Message;
 import com.vdurmont.emoji.Emoji;
 import com.vdurmont.emoji.EmojiManager;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TwimlBuilder {
     public MessagingResponse build(String from, String to, String requestBody) {
-        Media image = buildMedia(requestBody);
-        Message msg = new Message.Builder().from(to).to(from).media(image).build();
-        MessagingResponse messagingResponse = new MessagingResponse.Builder().message(msg).build();
+        Message.Builder mbuilder = new Message.Builder().from(to).to(from);
+        List<Media> mlist = buildMediaList(requestBody);
+        mlist.forEach( m -> mbuilder.media(m));
+        Message msg = mbuilder.build();
+        return new MessagingResponse.Builder().message(msg).build();
+    }
+
+    protected List<Media> buildMediaList(String input) {
+      List<Media> list = new ArrayList<Media>();
+      list.add(buildMedia(input));
+      return list;
     }
 
     protected Media buildMedia(String input) {
