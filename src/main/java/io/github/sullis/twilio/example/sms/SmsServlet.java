@@ -22,14 +22,14 @@ public class SmsServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    String from = req.getParameter("From");
-    String to = req.getParameter("To");
+    String requestFrom = req.getParameter("From");
+    String requestTo = req.getParameter("To");
     String requestBody = req.getParameter("Body");
 
     resp.setContentType("application/xml; charset=" + charset);
     resp.setCharacterEncoding(charset);
     PrintWriter out = resp.getWriter();
-    String twiml = new TwimlBuilder().build(to, from, requestBody).toXml();
+    String twiml = new TwimlBuilder().build(requestTo, requestFrom, requestBody).toXml();
     out.println(twiml);
     out.flush();
   }
