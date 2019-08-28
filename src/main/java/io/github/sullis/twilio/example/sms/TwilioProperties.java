@@ -1,9 +1,19 @@
 package io.github.sullis.twilio.example.sms;
 
+import java.io.IOException;
 import java.util.Properties;
 
 public class TwilioProperties {
-    private static Properties props = new Properties().load(TwilioProperties.class.getResourceAsStream("twilio.properties"));
+    private static Properties props;
+
+    static {
+         props = new Properties();
+         try {
+             props.load(TwilioProperties.class.getResourceAsStream("twilio.properties"));
+         } catch (IOException ex) {
+             throw new RuntimeException(ex);
+         }
+    }
 
     static public String getAccount() { return props.getProperty("twilio.account"); }
 
