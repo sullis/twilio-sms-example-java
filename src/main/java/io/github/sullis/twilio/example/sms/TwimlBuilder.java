@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TwimlBuilder {
     public MessagingResponse build(String from, String to, String requestBody) {
-        Message.Builder mbuilder = new Message.Builder().from(to).to(from);
+        Message.Builder mbuilder = new Message.Builder().from(from).to(to);
         List<Media> mlist = buildMediaList(requestBody);
         mlist.forEach( m -> mbuilder.media(m));
         Message msg = mbuilder.build();
