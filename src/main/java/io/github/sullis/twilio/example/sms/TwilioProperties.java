@@ -11,7 +11,7 @@ public class TwilioProperties {
          try {
              props.load(TwilioProperties.class.getResourceAsStream("twilio.properties"));
          } catch (IOException ex) {
-             throw new RuntimeException(ex);
+             ex.printStackTrace();
          }
     }
 
