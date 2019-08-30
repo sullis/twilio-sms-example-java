@@ -1,14 +1,37 @@
 
 package io.github.sullis.twilio.example.sms;
 
+import com.vdurmont.emoji.EmojiManager;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class EmojiSupportTest {
+
   @Test
   public void testUrlFor() {
     assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f44b.png",
             EmojiSupport.urlFor(EmojiSupport.DEFAULT_EMOJI));
+
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f436.png",
+            EmojiSupport.urlFor(EmojiManager.getForAlias("dog")));
+
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f431.png",
+            EmojiSupport.urlFor(EmojiManager.getForAlias("cat")));
+
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f308.png",
+            EmojiSupport.urlFor(EmojiManager.getForAlias("rainbow")));
+
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u26be.png",
+            EmojiSupport.urlFor(EmojiManager.getForAlias("baseball")));
+
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u26be.png",
+            EmojiSupport.urlFor(EmojiManager.getForAlias("baseball")));
+
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f44d.png",
+            EmojiSupport.urlFor(EmojiManager.getForAlias("thumbsup")));
+
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f44b.png",
+            EmojiSupport.urlFor(EmojiManager.getForAlias("wave")));
   }
 
 }
