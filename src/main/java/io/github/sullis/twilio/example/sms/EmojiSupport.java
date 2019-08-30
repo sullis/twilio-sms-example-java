@@ -12,13 +12,17 @@ public class EmojiSupport {
     }
 
     private static String toHexString(Emoji emoji) {
-        final int codePointCount = emoji.getUnicode().codePointCount(0, emoji.getUnicode().length());
+      return toHexString(emoji.getUnicode());
+    }
+
+    private static String toHexString(String s) {
+        final int codePointCount = s.codePointCount(0, s.length());
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < codePointCount; i++) {
             if (i > 0) {
                 sb.append("_");
             }
-            sb.append(Integer.toHexString(emoji.getUnicode().codePointAt(i)));
+            sb.append(Integer.toHexString(s.codePointAt(i)));
         }
         return sb.toString();
     }
