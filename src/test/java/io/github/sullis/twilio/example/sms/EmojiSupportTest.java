@@ -24,9 +24,6 @@ public class EmojiSupportTest {
     assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u26be.png",
             EmojiSupport.urlFor(EmojiManager.getForAlias("baseball")));
 
-    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u26be.png",
-            EmojiSupport.urlFor(EmojiManager.getForAlias("baseball")));
-
     assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f44d.png",
             EmojiSupport.urlFor(EmojiManager.getForAlias("thumbsup")));
 
