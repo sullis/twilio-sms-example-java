@@ -28,3 +28,7 @@ out
 target/
 
 src/main/resources/twilio.properties
+
+.classpath
+.project
+.settings/
