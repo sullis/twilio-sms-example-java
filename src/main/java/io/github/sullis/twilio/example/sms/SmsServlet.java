@@ -30,7 +30,7 @@ public class SmsServlet extends HttpServlet {
     resp.setCharacterEncoding(charset);
     PrintWriter out = resp.getWriter();
     String twiml = new TwimlBuilder().build(requestTo, requestFrom, requestBody).toXml();
-    out.println(twiml);
+    out.print(twiml);
     out.flush();
   }
 
