@@ -30,6 +30,9 @@ public class EmojiSupportTest {
     assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f44b.png",
             EmojiSupport.urlFor(EmojiManager.getForAlias("wave")));
 
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f3c4.png",
+            EmojiSupport.urlFor(EmojiManager.getForAlias("surfer").getUnicode()));
+
     /* TODO
 
     // Ireland flag
