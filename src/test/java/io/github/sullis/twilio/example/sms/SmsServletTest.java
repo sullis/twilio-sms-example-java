@@ -19,7 +19,10 @@ public class SmsServletTest {
         MockHttpServletResponse response = new MockHttpServletResponse();
         SmsServlet servlet = new SmsServlet();
         servlet.doPost(req, response);
-        assertEquals("<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Message from=\"777-777-7777\" to=\"555-555-5555\"><Media>https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f32e.png</Media></Message></Response>",
+        assertEquals("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + "<Response><Message from=\"777-777-7777\" to=\"555-555-5555\">"
+                + "<Media>https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f32e.png</Media>"
+                + "</Message></Response>",
                 response.getContentAsString());
     }
 }
