@@ -18,12 +18,15 @@ public class EmojiSupport {
 
     private static String toHexString(String s) {
         final int codePointCount = s.codePointCount(0, s.length());
+        System.out.println("codePointCount: " + codePointCount);
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < codePointCount; i++) {
+            final int codePoint = s.codePointAt(i);
+            System.out.println("codePoint: " + codePoint);
             if (i > 0) {
-                sb.append("_");
+                sb.append("_1");
             }
-            sb.append(Integer.toHexString(s.codePointAt(i)));
+            sb.append(Integer.toHexString(codePoint));
         }
         return sb.toString();
     }
