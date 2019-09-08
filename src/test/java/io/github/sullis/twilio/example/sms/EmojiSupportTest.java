@@ -36,7 +36,7 @@ public class EmojiSupportTest {
   }
 
   // TODO @Test
-  public void testUrlFor_fitzpatrickModifiers() {
+  public void xtestUrlFor_fitzpatrickModifiers() {
     assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f3c4_x.png",
             EmojiSupport.urlFor(EmojiManager.getForAlias("surfer").getUnicode(Fitzpatrick.TYPE_1_2)));
 
@@ -48,7 +48,7 @@ public class EmojiSupportTest {
   }
 
   // TODO @Test
-  public void testUrlFor_flags() {
+  public void xtestUrlFor_flags() {
     // Ireland flag
     // https://emojipedia.org/flag-for-ireland/
     assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_uXXX.png",

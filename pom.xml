@@ -29,6 +29,11 @@
       <artifactId>emoji-java</artifactId>
       <version>5.1.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-text</artifactId>
+      <version>1.8</version>
+    </dependency>
     <dependency>                        <!-- REQUIRED -->
       <groupId>javax.servlet</groupId>  <!-- Java Servlet API -->
       <artifactId>javax.servlet-api</artifactId>
