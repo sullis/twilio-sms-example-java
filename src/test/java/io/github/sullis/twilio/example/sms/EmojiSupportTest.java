@@ -35,15 +35,21 @@ public class EmojiSupportTest {
             EmojiSupport.urlFor(EmojiManager.getForAlias("surfer").getUnicode()));
   }
 
-  // TODO @Test
-  public void xtestUrlFor_fitzpatrickModifiers() {
-    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f3c4_x.png",
+  @Test
+  public void testUrlFor_fitzpatrickModifiers() {
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f3c4_1f3fb.png",
             EmojiSupport.urlFor(EmojiManager.getForAlias("surfer").getUnicode(Fitzpatrick.TYPE_1_2)));
 
-    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f3c4_x.png",
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f3c4_1f3fc.png",
+            EmojiSupport.urlFor(EmojiManager.getForAlias("surfer").getUnicode(Fitzpatrick.TYPE_3)));
+
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f3c4_1f3fd.png",
             EmojiSupport.urlFor(EmojiManager.getForAlias("surfer").getUnicode(Fitzpatrick.TYPE_4)));
 
-    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f3c4_x.png",
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f3c4_1f3fe.png",
+            EmojiSupport.urlFor(EmojiManager.getForAlias("surfer").getUnicode(Fitzpatrick.TYPE_5)));
+
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f3c4_1f3ff.png",
             EmojiSupport.urlFor(EmojiManager.getForAlias("surfer").getUnicode(Fitzpatrick.TYPE_6)));
   }
 

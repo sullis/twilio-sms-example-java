@@ -4,6 +4,8 @@ import com.vdurmont.emoji.Emoji;
 import com.vdurmont.emoji.EmojiManager;
 import org.apache.commons.text.translate.UnicodeEscaper;
 
+import java.util.StringTokenizer;
+
 public class EmojiSupport {
     public static final Emoji DEFAULT_EMOJI = EmojiManager.getForAlias("wave");
 
@@ -18,6 +20,17 @@ public class EmojiSupport {
 
     private static String toHexString(String input) {
         UnicodeEscaper escaper = new UnicodeEscaper();
-        return escaper.translate(input).replace("\\u", "u").toLowerCase();
+        StringTokenizer tokenizer = new StringTokenizer(escaper.translate(input), "\\u");
+        int count = 0;
+        StringBuilder sb = new StringBuilder();
+        sb.append('u');
+        while (tokenizer.hasMoreTokens()) {
+            if (count > 0) {
+                sb.append('_');
+            }
+            sb.append(tokenizer.nextToken().toLowerCase());
+            count++;
+        }
+        return sb.toString();
     }
 }
