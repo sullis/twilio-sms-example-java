@@ -29,6 +29,20 @@ public class EmojiSupportTest {
 
     assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f44b.png",
             EmojiSupport.urlFor(EmojiManager.getForAlias("wave")));
+
+    /* TODO
+
+    // Ireland flag
+    // https://emojipedia.org/flag-for-ireland/
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_uXXX.png",
+            EmojiSupport.urlFor(EmojiManager.getForAlias("ie")));
+
+    // Mexico flag
+    // https://emojipedia.org/flag-for-mexico/
+    assertEquals("https://sullis.github.io/noto-emoji-tools/assets/400/emoji_uXXX.png",
+            EmojiSupport.urlFor(EmojiManager.getForAlias("mx")));
+
+     */
   }
 
 }
