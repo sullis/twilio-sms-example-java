@@ -7,12 +7,13 @@ public class EmojiSupport {
     public static final Emoji DEFAULT_EMOJI = EmojiManager.getForAlias("wave");
 
     public static String urlFor(Emoji emoji) {
-        String hex = toHexString(emoji);
+        String hex = toHexString(emoji.getUnicode());
         return "https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u" + hex + ".png";
     }
 
-    private static String toHexString(Emoji emoji) {
-      return toHexString(emoji.getUnicode());
+    public static String urlFor(String unicode) {
+        String hex = toHexString(unicode);
+        return "https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u" + hex + ".png";
     }
 
     private static String toHexString(String s) {
