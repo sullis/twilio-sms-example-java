@@ -21,7 +21,16 @@ public class SmsServletTest {
             + " " + surfer.getUnicode(Fitzpatrick.TYPE_6);
 
     @Test
-    public void happyPath_two_tacos() throws Exception {
+    public void one_taco() throws Exception {
+        MockHttpServletResponse response = processRequest(taco);
+        assertEquals("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                        + "<Response><Message from=\"777-777-7777\" to=\"555-555-5555\">"
+                        + "<Media>https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f32e.png</Media>"
+                        + "</Message></Response>",
+                response.getContentAsString());
+    }
+    @Test
+    public void two_tacos() throws Exception {
         MockHttpServletResponse response = processRequest(taco + taco);
         assertEquals("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                         + "<Response><Message from=\"777-777-7777\" to=\"555-555-5555\">"
@@ -32,7 +41,7 @@ public class SmsServletTest {
     }
 
     @Test
-    public void happyPath_surfers() throws Exception {
+    public void surfers() throws Exception {
         MockHttpServletResponse response = processRequest(surfers);
         assertEquals("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                         + "<Response><Message from=\"777-777-7777\" to=\"555-555-5555\">"
@@ -44,6 +53,20 @@ public class SmsServletTest {
                         + "<Media>https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f3c4_1f3ff.png</Media>"
                         + "</Message></Response>",
                 response.getContentAsString());
+    }
+
+    @Test
+    public void supportEmojiAlias() throws Exception {
+        final String alias = "apple";
+        MockHttpServletResponse response1 = processRequest(alias);
+        assertEquals("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                        + "<Response><Message from=\"777-777-7777\" to=\"555-555-5555\">"
+                        + "<Media>https://sullis.github.io/noto-emoji-tools/assets/400/emoji_u1f34e.png</Media>"
+                        + "</Message></Response>",
+                response1.getContentAsString());
+
+        MockHttpServletResponse response2 = processRequest(EmojiManager.getForAlias(alias).getUnicode());
+        assertEquals(response1.getContentAsString(), response2.getContentAsString());
     }
 
     private MockHttpServletResponse processRequest(String requestBody) throws Exception {
