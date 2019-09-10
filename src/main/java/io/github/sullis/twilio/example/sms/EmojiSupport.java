@@ -30,7 +30,7 @@ public class EmojiSupport {
         if (emojis.isEmpty()) {
             StringTokenizer tokenizer = new StringTokenizer(input);
             while (tokenizer.hasMoreTokens()) {
-                Emoji e = EmojiManager.getForAlias(tokenizer.nextToken());
+                Emoji e = EmojiManager.getForAlias(tokenizer.nextToken().trim().toLowerCase());
                 if (e != null) {
                     emojis.add(e.getUnicode());
                 }
