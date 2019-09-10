@@ -3,8 +3,6 @@ package io.github.sullis.twilio.example.sms;
 import com.twilio.twiml.MessagingResponse;
 import com.twilio.twiml.messaging.Media;
 import com.twilio.twiml.messaging.Message;
-import com.vdurmont.emoji.EmojiParser;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +17,11 @@ public class TwimlBuilder {
 
     protected List<Media> buildMediaList(String input) {
       List<Media> list = new ArrayList<Media>();
-      List<String> emojis = EmojiParser.extractEmojis(input);
-      for (String e : emojis) {
-          list.add(buildMedia(e));
+      List<String> emojis = EmojiSupport.extractEmojis(input);
+      if (emojis.isEmpty()) {
+          emojis.add(EmojiSupport.DEFAULT_EMOJI.getUnicode());
       }
+      emojis.forEach(s -> list.add(buildMedia(s)));
       return list;
     }
 
