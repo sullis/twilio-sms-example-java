@@ -11,16 +11,18 @@ jobs:
   dump_context:
     name: dump context
     runs-on: ubuntu-latest
-    env:
-      GITHUB_CONTEXT: ${{ toJson(github) }}
-      JOB_CONTEXT: ${{ toJson(job) }}
-      RUNNER_CONTEXT: ${{ toJson(runner) }}
     steps:
     - name: print GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo "$GITHUB_CONTEXT"
     - name: print job context
+      env:
+        JOB_CONTEXT: ${{ toJson(job) }}
       run: echo "$JOB_CONTEXT"
     - name: print runner context
+      env:
+        RUNNER_CONTEXT: ${{ toJson(runner) }}
       run: echo "$RUNNER_CONTEXT"
 
   build:
