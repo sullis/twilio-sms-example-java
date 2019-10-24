@@ -24,7 +24,6 @@ jobs:
       run: echo "$RUNNER_CONTEXT"
   build:
     runs-on: ubuntu-latest
-    needs: dump_context
     - uses: actions/checkout@v1
     - name: Set up JDK
       uses: actions/setup-java@v1
