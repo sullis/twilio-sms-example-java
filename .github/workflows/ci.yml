@@ -7,22 +7,24 @@ on:
     branches:
       - master
 jobs:
+
   dump_context:
+    name: dump context
     runs-on: ubuntu-latest
+    env:
+      GITHUB_CONTEXT: ${{ toJson(github) }}
+      JOB_CONTEXT: ${{ toJson(job) }}
+      RUNNER_CONTEXT: ${{ toJson(runner) }}
     steps:
-    - name: Dump GitHub context
-      env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
+    - name: print GitHub context
       run: echo "$GITHUB_CONTEXT"
-    - name: Dump job context
-      env:
-          JOB_CONTEXT: ${{ toJson(job) }}
+    - name: print job context
       run: echo "$JOB_CONTEXT"
-    - name: Dump runner context
-      env:
-        RUNNER_CONTEXT: ${{ toJson(runner) }}
+    - name: print runner context
       run: echo "$RUNNER_CONTEXT"
+
   build:
+    name: build
     runs-on: ubuntu-latest
     - uses: actions/checkout@v1
     - name: Set up JDK
