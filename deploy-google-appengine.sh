@@ -1,3 +1,7 @@
-cp ~/twilio.properties ./src/main/resources
+if [ -f "~/twilio.properties" ]; then
+  cp ~/twilio.properties ./src/main/resources
+fi
 mvn appengine:deploy
-git checkout ./src/main/resources/twilio.properties
+if [ -f "./src/main/resources/twilio.properties" ]; then
+  git checkout ./src/main/resources/twilio.properties
+fi
