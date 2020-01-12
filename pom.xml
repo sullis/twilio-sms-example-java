@@ -100,6 +100,9 @@
         <artifactId>jib-maven-plugin</artifactId>
         <version>1.8.0</version>
         <configuration>
+          <from>
+            <image>gcr.io/distroless/java/jetty:java8</image>
+          </from>
           <to>
             <image>myimage</image>
           </to>
