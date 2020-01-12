@@ -14,9 +14,15 @@ $ mvn clean test
 $ ./deploy-google-appengine.sh
 ```
 
-# Build a Docker image
+# Build a container image
 
 ```
 $ mvn clean package jib:build
 ```
 
+
+# Build to Docker daemon
+
+```
+$ mvn clean package jib:dockerBuild
+```
