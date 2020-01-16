@@ -8,7 +8,7 @@ public class TwilioProperties {
     static {
          props = new Properties();
          try {
-             props.load(TwilioProperties.class.getResourceAsStream("twilio.properties"));
+             props.load(TwilioProperties.class.getResourceAsStream("/twilio.properties"));
          } catch (Exception ex) {
              System.err.println("Unable to load [twilio.properties]. " + ex.getClass().getName());
              ex.printStackTrace();
