@@ -8,7 +8,9 @@ import java.util.Map;
 
 public class SecurityUtil {
     public static boolean isValid(final String authToken, final HttpServletRequest request) {
-
+        if (authToken == null) {
+            throw new IllegalArgumentException("authToken is null");
+        }
         final String expectedSignature = request.getHeader("X-Twilio-Signature");
         System.out.println("expectedSignature: " + expectedSignature);
         if (expectedSignature == null) {

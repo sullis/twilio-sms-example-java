@@ -17,6 +17,6 @@ public class TwilioProperties {
 
     static public String getAccount() { return props.getProperty("twilio.account"); }
 
-    static public String getPassword() { return props.getProperty("twilio.key"); }
+    static public String getAuthToken() { return props.getProperty("twilio.key"); }
 
 }

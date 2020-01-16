@@ -19,7 +19,7 @@ public class SmsServlet extends HttpServlet {
   private final String authToken;
 
   public SmsServlet() {
-    this(TwilioProperties.getPassword());
+    this(TwilioProperties.getAuthToken());
   }
 
   public SmsServlet(String authToken) {
@@ -29,14 +29,6 @@ public class SmsServlet extends HttpServlet {
   @Override
   public void init() {
     Twilio.init(TwilioProperties.getAccount(), authToken);
-  }
-
-  @Override
-  public void service(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-    if (!SecurityUtil.isValid(authToken, req)) {
-      throw new IllegalStateException("Request validation failed");
-    }
-    super.service(req, resp);
   }
 
   @Override
