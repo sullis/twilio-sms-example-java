@@ -8,7 +8,9 @@ import java.util.Map;
 
 public class SecurityUtil {
     public static boolean isValid(final String authToken, final HttpServletRequest request) {
+
         final String expectedSignature = request.getHeader("X-Twilio-Signature");
+        System.out.println("expectedSignature: " + expectedSignature);
         if (expectedSignature == null) {
             return false;
         }
@@ -19,8 +21,13 @@ public class SecurityUtil {
             url.append(request.getQueryString());
         }
 
+        Map<String, String> parameters = buildMap(request.getParameterMap());
+
+        System.out.println("parameters: " + parameters);
+        System.out.println("url: " + url.toString());
+
         return validator.validate(url.toString(),
-                buildMap(request.getParameterMap()),
+                parameters,
                 expectedSignature);
     }
 
