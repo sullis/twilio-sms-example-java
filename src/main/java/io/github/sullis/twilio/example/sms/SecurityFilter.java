@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@WebFilter(urlPatterns = {"/*"} )
+@WebFilter(urlPatterns = {"/disabled"} )
 public class SecurityFilter implements Filter {
 
     private RequestValidator requestValidator;
