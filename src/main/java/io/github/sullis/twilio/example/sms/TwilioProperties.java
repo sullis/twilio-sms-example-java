@@ -1,6 +1,5 @@
 package io.github.sullis.twilio.example.sms;
 
-import java.io.IOException;
 import java.util.Properties;
 
 public class TwilioProperties {
@@ -10,7 +9,8 @@ public class TwilioProperties {
          props = new Properties();
          try {
              props.load(TwilioProperties.class.getResourceAsStream("twilio.properties"));
-         } catch (IOException ex) {
+         } catch (Exception ex) {
+             System.err.println("Unable to load [twilio.properties]. " + ex.getClass().getName());
              ex.printStackTrace();
          }
     }
