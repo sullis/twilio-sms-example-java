@@ -15,9 +15,26 @@ import javax.servlet.http.HttpServletResponse;
 public class SmsServlet extends HttpServlet {
   private static final String charset = "utf-8";
 
+  private final String authToken;
+
+  public SmsServlet() {
+    this(TwilioProperties.getPassword());
+  }
+
+  public SmsServlet(String authToken) {
+    this.authToken = authToken;
+  }
+
   @Override
   public void init() {
-    Twilio.init(TwilioProperties.getAccount(), TwilioProperties.getPassword());
+    Twilio.init(TwilioProperties.getAccount(), authToken);
+  }
+
+  @Override
+  public void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    if (!SecurityUtil.isValid(authToken, req)) {
+      throw new IllegalStateException("Request validation failed");
+    }
   }
 
   @Override

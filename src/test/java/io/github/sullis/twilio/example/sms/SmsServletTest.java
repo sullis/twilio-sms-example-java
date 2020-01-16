@@ -11,6 +11,7 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SmsServletTest {
+    static private final String fakeAuthToken = "correctHorse";
     static private final String taco = "🌮";
     static private final Emoji surfer = EmojiManager.getForAlias("surfer");
     static private final String surfers = surfer.getUnicode()
@@ -75,7 +76,7 @@ public class SmsServletTest {
         req.addParameter("To", "777-777-7777");
         req.addParameter("Body", requestBody);
         MockHttpServletResponse response = new MockHttpServletResponse();
-        SmsServlet servlet = new SmsServlet();
+        SmsServlet servlet = new SmsServlet(fakeAuthToken);
         servlet.doPost(req, response);
         return response;
     }
