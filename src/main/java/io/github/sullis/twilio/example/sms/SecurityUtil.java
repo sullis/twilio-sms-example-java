@@ -18,7 +18,7 @@ public class SecurityUtil {
             url.append("?");
             url.append(request.getQueryString());
         }
-        
+
         return validator.validate(url.toString(),
                 buildMap(request.getParameterMap()),
                 expectedSignature);
