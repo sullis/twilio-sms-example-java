@@ -5,6 +5,14 @@
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
+
+    <logger name="org.apache" level="INFO"/>
+    <logger name="org.eclipse" level="INFO"/>
+    <logger name="io.netty" level="INFO"/>
+    <logger name="io.github" level="INFO"/>
+    <logger name="com.github" level="INFO"/>
+    <logger name="com.twilio" level="INFO"/>
+
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
     </root>
