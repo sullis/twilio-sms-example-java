@@ -14,7 +14,7 @@
     <failOnMissingWebXml>false</failOnMissingWebXml>
     <appengine.maven.plugin>2.4.0</appengine.maven.plugin>
     <surefire.maven.plugin>3.0.0-M5</surefire.maven.plugin>
-    <jetty.maven.plugin>9.4.32.v20200930</jetty.maven.plugin>
+    <jetty.maven.plugin>9.4.33.v20201020</jetty.maven.plugin>
     <junit.version>5.7.0</junit.version>
     <spring.version>5.2.9.RELEASE</spring.version>
     <logback.version>1.2.3</logback.version>
