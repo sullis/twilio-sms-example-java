@@ -1,19 +1,12 @@
 <configuration>
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <outputPatternAsHeader>false</outputPatternAsHeader>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-        </encoder>
-    </appender>
 
-    <logger name="org.apache" level="INFO"/>
-    <logger name="org.eclipse" level="INFO"/>
-    <logger name="io.netty" level="INFO"/>
-    <logger name="io.github" level="INFO"/>
-    <logger name="com.github" level="INFO"/>
-    <logger name="com.twilio" level="INFO"/>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+    </encoder>
+  </appender>
 
-    <root level="INFO">
-        <appender-ref ref="STDOUT"/>
-    </root>
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+  </root>
 </configuration>
