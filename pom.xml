@@ -16,7 +16,7 @@
     <surefire.maven.plugin>3.0.0-M5</surefire.maven.plugin>
     <jetty.maven.plugin>11.0.0</jetty.maven.plugin>
     <junit.version>5.7.0</junit.version>
-    <spring.version>5.3.2</spring.version>
+    <spring.version>5.3.3</spring.version>
     <logback.version>1.2.3</logback.version>
     <slf4j.version>1.7.30</slf4j.version>
   </properties>
