@@ -12,7 +12,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <failOnMissingWebXml>false</failOnMissingWebXml>
-    <appengine.maven.plugin>2.4.0</appengine.maven.plugin>
+    <appengine.maven.plugin>2.4.1</appengine.maven.plugin>
     <surefire.maven.plugin>3.0.0-M5</surefire.maven.plugin>
     <jetty.maven.plugin>11.0.6</jetty.maven.plugin>
     <junit.version>5.8.0-M1</junit.version>
