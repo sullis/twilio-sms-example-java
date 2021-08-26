@@ -18,7 +18,7 @@
     <junit.version>5.8.0-M1</junit.version>
     <spring.version>5.3.9</spring.version>
     <logback.version>1.2.3</logback.version>
-    <slf4j.version>1.7.31</slf4j.version>
+    <slf4j.version>1.7.32</slf4j.version>
   </properties>
 
   <dependencies>
