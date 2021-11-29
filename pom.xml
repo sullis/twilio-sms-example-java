@@ -15,7 +15,7 @@
     <appengine.maven.plugin>2.4.1</appengine.maven.plugin>
     <surefire.maven.plugin>3.0.0-M5</surefire.maven.plugin>
     <jetty.maven.plugin>11.0.7</jetty.maven.plugin>
-    <junit.version>5.8.1</junit.version>
+    <junit.version>5.8.2</junit.version>
     <spring.version>5.3.13</spring.version>
     <logback.version>1.2.7</logback.version>
     <slf4j.version>1.7.32</slf4j.version>
