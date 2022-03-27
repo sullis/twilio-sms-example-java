@@ -124,6 +124,25 @@
         <target>${maven.compiler.target}</target>
       </configuration>
     </plugin>
+    <plugin>
+      <groupId>org.gaul</groupId>
+      <artifactId>modernizer-maven-plugin</artifactId>
+      <version>2.4.0</version>
+      <configuration>
+        <javaVersion>8</javaVersion>
+        <failOnViolations>true</failOnViolations>
+        <includeTestClasses>true</includeTestClasses>
+      </configuration>
+      <executions>
+        <execution>
+          <id>modernizer</id>
+          <phase>verify</phase>
+          <goals>
+            <goal>modernizer</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
       <plugin>                          <!-- Used for local debugging -->
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
